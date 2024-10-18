@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KafkaHelpAI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>KafkaHelpAI</h1>
+        <p>Your go-to resource for managing and scaling Kafka clusters efficiently!</p>
+        <button id="darkModeToggle" class="btn">Dark Mode</button>
+    </header>
+
+    <!-- Search bar for quick feature lookup -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search features..." onkeyup="filterFeatures()">
+    </div>
+
+    <!-- Notification area -->
+    <div id="notification" class="notification"></div>
+
+    <section class="content">
+        <!-- Training and Education -->
+        <div class="collapsible">
+            <h2>Training and Education</h2>
+            <div class="collapsible-content">
+                <button class="btn" onclick="openLightbox('training')" title="Detailed training programs">Internal Training Programs</button>
+                <button class="btn" onclick="openLightbox('certifications')" title="Pursue Kafka certifications">Certifications</button>
+                <div class="progress-container">
+                    <label for="trainingProgress">Training Completion:</label>
+                    <progress id="trainingProgress" value="40" max="100"></progress>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hiring Experts -->
+        <div class="collapsible">
+            <h2>Hiring Experts</h2>
+            <div class="collapsible-content">
+                <button class="btn" onclick="confirmAction('hireConsultant')" title="Hire external consultants">Consultants and Contractors</button>
+                <button class="btn" onclick="confirmAction('hireSpecializedStaff')" title="Recruit Kafka specialists">Hiring Specialized Staff</button>
+            </div>
+        </div>
+
+        <!-- Automation Scripts -->
+        <div class="collapsible">
+            <h2>Automation Scripts</h2>
+            <div class="collapsible-content">
+                <button class="btn" onclick="openLightbox('ansible')" title="Automate Kafka with Ansible">Ansible</button>
+                <button class="btn" onclick="openLightbox('terraform')" title="Manage infrastructure with Terraform">Terraform</button>
+                <button class="btn" onclick="openLightbox('kubernetes')" title="Deploy Kafka with Kubernetes">Kubernetes</button>
+            </div>
+        </div>
+
+        <!-- Monitoring and Management Tools -->
+        <div class="collapsible">
+            <h2>Monitoring and Management Tools</h2>
+            <div class="collapsible-content">
+                <button class="btn" onclick="openLightbox('prometheus')" title="Monitor Kafka metrics with Prometheus">Prometheus</button>
+                <button class="btn" onclick="openLightbox('grafana')" title="Visualize metrics in Grafana">Grafana</button>
+                <button class="btn" onclick="openLightbox('datadog')" title="Monitor Kafka with Datadog">Datadog</button>
+            </div>
+        </div>
+
+        <!-- Add more collapsible sections and interactive features here -->
+    </section>
+
+    <!-- Lightboxes -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content" id="lightbox-content">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <p id="lightbox-text"></p>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modal-text"></p>
+            <button class="btn" onclick="executeAction()">Confirm</button>
+            <button class="btn" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="spinner"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
